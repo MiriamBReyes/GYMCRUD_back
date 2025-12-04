@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const ObjectId = mongoose.Types.ObjectId;
+const token = "dummy-token";
 
 const User = require('./models/User');
 const Exercise = require('./models/Exercise');
@@ -85,6 +86,7 @@ app.post('/auth/login', async (req, res) => {
 
     res.json({
       message: "Login correcto",
+      token,
       user: {
         id: user._id,
         name: user.name,
