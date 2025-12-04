@@ -2,11 +2,10 @@ FROM node:18
 
 WORKDIR /app
 
-COPY ./backend/package*.json ./
-
+COPY package*.json ./
 RUN npm install
 
-COPY ./backend .
+COPY . .
 
 EXPOSE 8080
 
